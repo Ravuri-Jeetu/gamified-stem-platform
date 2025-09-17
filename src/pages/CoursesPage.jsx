@@ -21,7 +21,9 @@ const CoursesPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
+        console.log('Starting fetch to backend...');
         const response = await fetch('http://localhost:3001/api/courses');
+        console.log('Response received:', response);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
